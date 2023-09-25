@@ -1,7 +1,3 @@
-# Random delay between 1 hour (3600 seconds) and 48 hours (172800 seconds)
-DELAY=$((RANDOM % 172800 + 3600))
-sleep $DELAY
-
 info="Commit: $(date)"
 echo "OS detected: $OSTYPE"
 
@@ -42,7 +38,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-git push https://kalpakci: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@github.com/kalpakci/commit-bot.git main
+git push -f https://kalpakci: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@github.com/kalpakci/commit-bot.git main
 if [ $? -ne 0 ]; then
     echo "Failed to push to origin"
     exit 1
